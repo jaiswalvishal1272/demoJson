@@ -5,12 +5,18 @@ require("./config/db/db.config");
 
 const app = express();
 
+const port = process.env.PORT;
+
 app.use(cors());
+app.use(express.json());
+
+app.use("/auth/signup", require("./routes/authRoutes/signUpRoute"));
+
 
 app.get("/", async(req, resp) => {
     resp.send("app is working fine");
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
     console.log("working fit nd fine");
 });
