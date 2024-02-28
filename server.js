@@ -11,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/auth/signup", require("./routes/authRoutes/signUpRoute"));
+app.use("/auth/login", require("./routes/authRoutes/logInRoute"));
 
 
 app.get("/", async(req, resp) => {
